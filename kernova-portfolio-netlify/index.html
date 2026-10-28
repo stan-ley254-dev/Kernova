@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="The Kernova Collective: a team of three developers building web systems, dashboards and mobile-friendly apps for growing businesses.">
+<title>The Kernova Collective | One Core. Limitless Creation.</title>
+<style>
+:root{
+  --bg:#f6f7fb;--surface:#ffffff;--text:#151a2c;--muted:#566079;--line:#e1e5f0;
+  --accent:#5b3df5;--accent2:#00b3a4;--accent-text:#ffffff;--hero1:#ede9ff;--hero2:#e0fbf8;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0e1120;--surface:#171b30;--text:#eef0fa;--muted:#a3abc6;--line:#272c47;--accent:#8c78ff;--accent2:#2dd4c4;--accent-text:#0e1120;--hero1:#1b1740;--hero2:#0f2a31}
+}
+:root[data-theme="dark"]{--bg:#0e1120;--surface:#171b30;--text:#eef0fa;--muted:#a3abc6;--line:#272c47;--accent:#8c78ff;--accent2:#2dd4c4;--accent-text:#0e1120;--hero1:#1b1740;--hero2:#0f2a31}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:30}
+a{color:var(--accent)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.dot{width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+nav{display:flex;gap:20px}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem}
+nav a:hover{color:var(--accent)}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 12px;font-size:1rem;cursor:pointer}
+@media(max-width:720px){
+  .menu{display:block}
+  nav{display:none;position:absolute;left:0;right:0;top:60px;flex-direction:column;gap:0;background:var(--surface);border-bottom:1px solid var(--line)}
+  nav.open{display:flex}
+  nav a{padding:14px 20px;border-top:1px solid var(--line)}
+}
+.hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));padding:72px 0 64px}
+.tag{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.1;margin:0 0 16px}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.1rem;color:var(--muted);max-width:620px;margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-text)}
+.btn.ghost{color:var(--accent)}
+section{padding:60px 0}
+h2{font-size:clamp(1.5rem,4vw,2rem);margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 32px;max-width:620px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{margin:10px 0 6px;font-size:1.1rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.ico{font-size:1.6rem}
+.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.alt .card{background:var(--bg)}
+.pill{display:inline-block;font-size:.75rem;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin:10px 6px 0 0;color:var(--muted)}
+.steps{counter-reset:s;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.step{counter-increment:s;padding-top:6px}
+.step::before{content:counter(s);display:flex;width:38px;height:38px;border-radius:50%;align-items:center;justify-content:center;font-weight:800;background:var(--accent);color:var(--accent-text);margin-bottom:10px}
+.step h3{margin:0 0 4px;font-size:1.05rem}
+.step p{margin:0;color:var(--muted);font-size:.95rem}
+.contact{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.contact a.card{text-decoration:none;color:var(--text);display:block}
+.contact .label{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.contact .val{font-size:1.1rem;font-weight:700;word-break:break-word;margin-top:4px}
+.note{font-size:.85rem;color:var(--muted);margin-top:18px}
+footer{padding:28px 0 36px;text-align:center;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top"><span class="dot"></span>Kernova Collective</a>
+    <button class="menu" id="menu" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+    <nav id="nav">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div class="tag">Software development team</div>
+    <h1>One Core.<br><span>Limitless Creation.</span></h1>
+    <p class="lead">We are three developers who build reliable, affordable web systems for growing businesses: sales, inventory, analytics and more, designed to work smoothly on any phone, tablet or computer.</p>
+    <div class="btns">
+      <a class="btn primary" href="#contact">Start a project</a>
+      <a class="btn ghost" href="#services">See our services</a>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What we build</h2>
+    <p class="sub">From a first idea to a working, secure system your team can use every day.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">🧾</div><h3>Business management systems</h3><p>Sales, point of sale, inventory, purchasing and customer records in one place.</p></div>
+      <div class="card"><div class="ico">📊</div><h3>Dashboards and analytics</h3><p>Clear reports on sales, stock and profit so owners can decide with confidence.</p></div>
+      <div class="card"><div class="ico">🌐</div><h3>Websites and web apps</h3><p>Fast, responsive sites and applications that look good on every screen.</p></div>
+      <div class="card"><div class="ico">📱</div><h3>Mobile-friendly apps</h3><p>Installable web apps with barcode scanning and quick access on phones.</p></div>
+      <div class="card"><div class="ico">🗄️</div><h3>Database design</h3><p>Well-structured, reliable databases that keep your data accurate as you grow.</p></div>
+      <div class="card"><div class="ico">🔒</div><h3>Security and support</h3><p>Role-based access, backups and ongoing help after launch.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="alt">
+  <div class="wrap">
+    <h2>Selected work</h2>
+    <p class="sub">A look at the kind of systems we deliver.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="ico">🎨</div>
+        <h3>Sales and inventory platform</h3>
+        <p>A system for a paint manufacturer and building materials dealer, covering sales, stock, purchase orders and sales analysis.</p>
+        <span class="pill">React</span><span class="pill">Node.js</span><span class="pill">SQL</span>
+      </div>
+      <div class="card">
+        <div class="ico">💊</div>
+        <h3>Multi-branch pharmacy ERP</h3>
+        <p>A web app that manages stock, sales and operations across several chemist branches.</p>
+        <span class="pill">React</span><span class="pill">Express</span><span class="pill">Multi-branch</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <h2>How we work</h2>
+    <p class="sub">A simple, transparent process with working demos along the way.</p>
+    <div class="steps">
+      <div class="step"><h3>Listen</h3><p>We learn how your business runs and what you need.</p></div>
+      <div class="step"><h3>Design</h3><p>We plan the data and screens, and you approve them.</p></div>
+      <div class="step"><h3>Build</h3><p>We deliver working modules in short cycles for early feedback.</p></div>
+      <div class="step"><h3>Launch and support</h3><p>We train your staff and stay on hand after go-live.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="alt">
+  <div class="wrap">
+    <h2>The team</h2>
+    <p class="sub">Three developers, one shared standard of quality.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">🧭</div><h3>Project lead and back end</h3><p>Coordination, client communication, server logic and APIs.</p></div>
+      <div class="card"><div class="ico">🎛️</div><h3>Front end</h3><p>Interfaces, dashboards and a smooth experience on every device.</p></div>
+      <div class="card"><div class="ico">🛡️</div><h3>Database and quality</h3><p>Data design, reporting, testing and secure deployment.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Let’s build something</h2>
+    <p class="sub">Tell us about your business and we will get back to you.</p>
+    <div class="contact">
+      <a class="card" href="mailto:kernovacollectives@gmail.com"><div class="label">Email</div><div class="val">kernovacollectives@gmail.com</div></a>
+      <a class="card" href="tel:0114454991"><div class="label">Phone</div><div class="val">0114454991</div></a>
+    </div>
+    <p class="note">Tap an option above to email or call us directly.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> The Kernova Collective · One Core. Limitless Creation.</div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('menu'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
+  n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
